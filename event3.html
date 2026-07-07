@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H.I.V.E. - Free Medical & Health Camp</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: #000; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    margin-top: 40px;
+    padding: 12px 20px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.05),
+        inset 0 0 12px rgba(255,255,255,0.03);
+    
+    position: fixed;
+    z-index: 10;
+}
+
+.nav-btn {
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav-btn:hover {
+    background: #ffcc00; 
+    color: black;
+    box-shadow: 0 0 20px rgba(255,204,0,0.35);
+    transform: translateY(-2px);
+}
+
+.details-wrapper {
+    width: 90%;
+    max-width: 1100px;
+    margin-top: 150px;
+    padding: 40px 0;
+    color: #ffffff;
+}
+
+.back-btn {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+    color: #ffffff;
+}
+
+.detail-header {
+    margin-bottom: 30px;
+}
+
+.detail-header h1 {
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.badge-pill {
+    display: inline-block;
+    background: rgba(255, 204, 0, 0.15);
+    border: 1px solid #ffcc00;
+    color: #ffcc00;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 99px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.showcase-banner {
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 40px;
+}
+
+.showcase-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-split {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.main-narrative h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    border-left: 4px solid #ffcc00;
+    padding-left: 14px;
+}
+
+.main-narrative p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 25px;
+}
+
+.logistics-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 30px;
+    height: fit-content;
+}
+
+.logistics-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.itpo-data-row {
+    margin-bottom: 18px;
+}
+
+.itpo-data-row span.label {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.itpo-data-row span.val {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.action-portal-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #ffcc00;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px;
+    border-radius: 8px;
+    margin-top: 25px;
+    transition: all 0.2s ease;
+}
+
+.action-portal-btn:hover {
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.site-footer {
+    width: 100%;
+    background: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 20px 20px 20px;
+    margin-top: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon-btn {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.social-icon-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.social-icon-btn:hover {
+    background: #ffcc00;
+    border-color: #ffcc00;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+}
+
+.social-icon-btn:hover svg {
+    fill: #000000;
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+.footer-motto-mini {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 90%;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .nav-btn {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    .details-wrapper {
+        margin-top: 130px;
+        padding: 20px;
+    }
+
+    .detail-header h1 {
+        font-size: 32px;
+    }
+
+    .info-split {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="about.html" class="nav-btn">About Us</a>
+    <a href="events.html" class="nav-btn">Events</a>
+    <a href="contact.html" class="nav-btn">Contact Us</a>
+</nav>
+
+<main class="details-wrapper">
+    
+    <a href="events.html" class="back-btn">Back to Events</a>
+
+    <div class="detail-header">
+        <h1>Free Medical & Health Camp</h1>
+        <div class="badge-pill">Healthcare Pillar</div>
+    </div>
+
+    <div class="showcase-banner">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200" alt="Health Camp Banner">
+    </div>
+
+    <div class="info-split">
+        
+        <div class="main-narrative">
+            <h2>Overview & Objectives</h2>
+            <p>The Free Medical & Health Camp addresses critical gaps in essential health consultation access within developing communities. Working hand-in-hand with regional health outposts, medical professionals, and diagnostic teams, H.I.V.E. structures the complete operational layout of the public campaign venue.</p>
+            <p>Volunteers act as critical support infrastructure by overseeing the patient registration desks, handling vital intake information formatting, orchestrating queue management flows, and setting up designated prescription and medicine distribution zones. Training on general operations will happen at the campsite prior to kick-off.</p>
+        </div>
+
+        <div class="logistics-card">
+            <h3>Event Profile</h3>
+            
+            <div class="itpo-data-row">
+                <span class="label">Date & Schedule</span>
+                <span class="val">03 October 2026</span>
+            </div>
+
+            <div class="itpo-data-row">
+                <span class="label">Primary Location Venue</span>
+                <span class="val">Public Health Outpost, Gurgaon</span>
+            </div>
+
+            <div class="itpo-data-row">
+                <span class="label">Strategic Partner</span>
+                <span class="val">Medics United Regional Outposts</span>
+            </div>
+
+            <div class="itpo-data-row">
+                <span class="label">Admission Access</span>
+                <span class="val">Free Entry / Logistics Helpers Needed</span>
+            </div>
+
+            <a href="https://forms.gle/99SJxJk7fr8DG5cv6" class="action-portal-btn" target="_blank">Register Pass</a>
+        </div>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-socials">
+        <a href="https://www.instagram.com/hive_official_india/" target="_blank" class="social-icon-btn" title="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+        </a>
+
+        <a href="https://linktr.ee/Join_HIVE" target="_blank" class="social-icon-btn" title="Linktree">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.586 13.414a1 1 0 0 1-1.414 0 4 4 0 0 1 0-5.656l3.536-3.536a4 4 0 0 1 5.656 5.656l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a2 2 0 1 0-2.828-2.828l-3.536 3.536a2 2 0 0 0 0 2.828 1 1 0 0 1 0 1.414zm2.828-2.828a1 1 0 0 1 1.414 0 4 4 0 0 1 0 5.656l-3.536 3.536a4 4 0 0 1-5.656-5.656l1.414 1.414a1 1 0 1 1 1.414 1.414l-1.414 1.414a2 2 0 1 0 2.828 2.828l3.536-3.536a2 2 0 0 0 0 2.828 1 1 0 0 1 0-1.414z"/>
+            </svg>
+        </a>
+
+        <a href="https://www.youtube.com/@H.I.V.E-t1v" target="_blank" class="social-icon-btn" title="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.496 6.136a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.555A3.016 3.016 0 0 0 .502 6.136C0 8.07 0 12 0 12s0 3.93.502 5.864a3.016 3.016 0 0 0 2.122 2.136c1.871.555 9.376.555 9.376.555s7.505 0 9.377-.555a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.504-5.864zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+        </a>
+    </div>
+    
+    <p class="footer-motto-mini">Find your purpose, Join the hive</p>
+    <p class="footer-copyright">&copy; 2026 H.I.V.E. Hub for Initiatives & Volunteer Events. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

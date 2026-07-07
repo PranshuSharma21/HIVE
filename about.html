@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H.I.V.E. - About Us</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: #000; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.navbar {
+    margin-top: 40px;
+    padding: 12px 20px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.05),
+        inset 0 0 12px rgba(255,255,255,0.03);
+    
+    
+    position: fixed;
+    z-index: 10;
+}
+
+.nav-btn {
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*whoever reads this is gay*/
+.nav-btn:hover {
+    background: #ffcc00; 
+    color: black;
+    box-shadow: 0 0 20px rgba(255,204,0,0.35);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 90%;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .nav-btn {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+    
+    
+    .about-section {
+        padding: 140px 20px 60px 20px !important;
+    }
+    .about-container h1 {
+        font-size: 38px !important;
+    }
+    .founders-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+
+
+.about-section {
+    width: 100%;
+    background: #000000;
+    padding: 160px 40px 80px 40px; 
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 1000px;
+    width: 100%;
+    color: #ffffff;
+}
+
+.about-container h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.about-accent {
+    width: 60px;
+    height: 4px;
+    background: #ffcc00;
+    margin: 0 auto 40px auto;
+    border-radius: 2px;
+}
+
+.about-container p.story-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 50px;
+    text-align: center;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-container h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.founder-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px 35px;
+    border-radius: 16px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.founder-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffcc00;
+    background: rgba(255, 255, 204, 0.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.founder-avatar {
+    width: 60px;
+    height: 60px;
+    background: #ffcc00;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.founder-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.founder-role {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.founder-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+.site-footer {
+
+    width: 100%;
+
+    background: #050505;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    padding: 40px 20px 20px 20px;
+
+    margin-top: auto; 
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+
+.footer-socials {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+}
+
+
+
+.social-icon-btn {
+
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: all 0.3s ease;
+
+}
+
+
+
+
+
+.social-icon-btn svg {
+
+    width: 22px;
+
+    height: 22px;
+
+    fill: rgba(255, 255, 255, 0.6);
+
+    transition: all 0.3s ease;
+
+}
+
+
+
+
+
+.social-icon-btn:hover {
+
+    background: #ffcc00;
+
+    border-color: #ffcc00;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+
+}
+
+
+
+.social-icon-btn:hover svg {
+
+    fill: #000000;
+
+}
+
+
+
+.footer-copyright {
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 14px;
+
+    text-align: center;
+
+    letter-spacing: 0.5px;
+
+    margin-top: 10px;
+
+}
+
+
+
+.footer-motto-mini {
+
+    color: rgba(255, 255, 255, 0.2);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+    
+      /*ignore the random spacing (i dont like css)*/
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="about.html" class="nav-btn">About Us</a>
+    <a href="events.html" class="nav-btn">Events</a>
+    <a href="contact.html" class="nav-btn">Contact Us</a>
+</nav>
+
+
+<main class="about-section">
+    <div class="about-container">
+        <h1>Behind the Hive</h1>
+        <div class="about-accent"></div>
+        
+        <p class="story-text">
+            H.I.V.E was built out of a simple realization: passion exists everywhere, but the avenues to connect that passion with real community action are often scattered. We envisioned a unified hub where social initiatives and volunteer drives could exist under one collective roof.
+        </p>
+        
+        <h2>The Creators</h2>
+        
+        <div class="founders-grid">
+            
+            <div class="founder-card">
+                <div class="founder-avatar">P</div>
+                <h3>Pranshu</h3>    
+                <p class="founder-role">Co-Founder &amp; Maker</p>
+                <p>IoT & Embedded Systems Enthusiast and
+Full stack developer </p>
+            </div>
+
+            
+            <div class="founder-card">
+                <div class="founder-avatar">A</div>
+                <h3>Archit</h3>
+                <p class="founder-role">Co-Founder &amp; Maker</p>
+                <p>Positioning & Branding | Learning to Build</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+    
+    
+        
+<footer class="site-footer">
+
+    <div class="footer-socials">
+
+        
+
+        <a href="https://www.instagram.com/hive_official_india/" target="_blank" class="social-icon-btn" title="Instagram">
+
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+
+            </svg>
+
+        </a>
+
+
+
+        
+
+        <a href="https://linktr.ee/Join_HIVE" target="_blank" class="social-icon-btn" title="Linktree">
+
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                <path d="M10.586 13.414a1 1 0 0 1-1.414 0 4 4 0 0 1 0-5.656l3.536-3.536a4 4 0 0 1 5.656 5.656l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a2 2 0 1 0-2.828-2.828l-3.536 3.536a2 2 0 0 0 0 2.828 1 1 0 0 1 0 1.414zm2.828-2.828a1 1 0 0 1 1.414 0 4 4 0 0 1 0 5.656l-3.536 3.536a4 4 0 0 1-5.656-5.656l1.414-1.414a1 1 0 1 1 1.414 1.414l-1.414 1.414a2 2 0 1 0 2.828 2.828l3.536-3.536a2 2 0 0 0 0-2.828 1 1 0 0 1 0-1.414z"/>
+
+            </svg>
+
+        </a>
+
+
+
+        
+
+        <a href="https://www.youtube.com/@H.I.V.E-t1v" target="_blank" class="social-icon-btn" title="YouTube">
+
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                <path d="M23.496 6.136a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.555A3.016 3.016 0 0 0 .502 6.136C0 8.07 0 12 0 12s0 3.93.502 5.864a3.016 3.016 0 0 0 2.122 2.136c1.871.555 9.376.555 9.376.555s7.505 0 9.377-.555a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.504-5.864zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+
+            </svg>
+
+        </a>
+
+    </div>
+
+    
+
+    <p class="footer-motto-mini">Find your purpose, Join the hive</p>
+
+    <p class="footer-copyright">&copy; 2026 H.I.V.E. Hub for Initiatives & Volunteer Events. All Rights Reserved.</p>
+
+</footer>
+    
+</body>
+</html>
